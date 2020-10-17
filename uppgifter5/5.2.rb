@@ -1,0 +1,17 @@
+def substrakt_one(num1)
+    return num1-1
+end
+
+#test for add_one
+
+def test_for_substrakt_one(anntal)
+    for i in 0...anntal
+        x= rand(100)
+        if x != substrakt_one(x+1)
+            return "error"
+        end
+    end
+    return "✔️"
+end
+
+puts test_for_substrakt_one(100)
