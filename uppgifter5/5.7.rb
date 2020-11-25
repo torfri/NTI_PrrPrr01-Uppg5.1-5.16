@@ -13,7 +13,7 @@ def test_hypotenus(antal)
             puts hypotenus(Math.sqrt(y), Math.sqrt(z))
             return "error #{x}**2 != #{y} + #{z}"
         end
-        print "✔"
+        print "."
     end
     return "✔️"
 end

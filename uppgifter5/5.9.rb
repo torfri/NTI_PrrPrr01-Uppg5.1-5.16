@@ -1,8 +1,5 @@
 def is_negativ(num)
-    if num >= 0
-        return false       
-    end
-    return true     # if negativ the output is now true
+    return num < 0    # if negativ the output is now true
 end
 
 #tests for is_negativ
@@ -19,3 +16,4 @@ def test_is_negativ(antal)
 end
 
 puts test_is_negativ(100)
+
