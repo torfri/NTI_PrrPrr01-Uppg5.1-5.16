@@ -12,7 +12,6 @@ puts "skriv din uträkning"
 
 user_input = gets.chomp.chars
 tal = converter(tal_creator(user_input))
-p tal
 
 
-puts "svar #{parentisTal(tal)}" 
+puts "svar #{parantesesecounter(tal)}" 

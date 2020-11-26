@@ -150,6 +150,8 @@ require_relative 'num_to_int'
 
 # puts "svar #{tal}"
 
+
+
 def calculat(tal)
     num1 = nil
     num2 = nil
@@ -181,7 +183,6 @@ def calculat(tal)
             tal.delete_at(num1)
             tal.delete_at(num2-1)
         end
-        p tal
     end
-    return tal
+    return tal[0]
 end
