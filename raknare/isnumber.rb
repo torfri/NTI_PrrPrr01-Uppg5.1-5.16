@@ -5,3 +5,7 @@ end
 def isOperator(steinToChek)
     return steinToChek == "+" || steinToChek == "-" || steinToChek == "*" || steinToChek == "/"
 end
+
+def isParantes(stringToChek)
+    return stringToChek == "(" || stringToChek == ")"
+end

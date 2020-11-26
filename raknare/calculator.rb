@@ -11,7 +11,7 @@ require_relative 'num_to_int'
 # user_num =""
 # user_nums =[]
 
-# puts "skriv quit når som för att avsluta programet"
+# puts "skriv quit när som för att avsluta programet"
 
 # while user_input != "quit" || user_input_num1 != "quit"||user_input_num2 != "quit"
 
@@ -104,49 +104,84 @@ require_relative 'num_to_int'
 #     p tal
 # end
 
-user_input = ""
-tal = []
-num1 = nil
-num2 = nil
-laste_was_number = false
+# user_input = ""
+# tal = []
+# num1 = nil
+# num2 = nil
+# laste_was_number = false
 
-puts "skriv din uträkning"
+# puts "skriv din uträkning"
 
-user_input = gets.chomp.chars
+# user_input = gets.chomp.chars
 
-
-tal = converter(tal_creator(user_input))
-p tal
-
+# tal = converter(tal_creator(user_input))
+# p tal
 
 
-while tal.length > 1
-    if tal.index("*") != nil
-        num1 = tal.index("*")-1
-        num2 = tal.index("*")+1
-        tal[tal.index("*")] = mult_two(tal[num1], tal[num2])
-        tal.delete_at(num1)
-        tal.delete_at(num2-1)
-    elsif tal.index("/") != nil
-        num1 = tal.index("/")-1
-        num2 = tal.index("/")+1
-        tal[tal.index("/")] = div_two(tal[num1], tal[num2])
-        tal.delete_at(num1)
-        tal.delete_at(num2-1)
-    elsif tal.index("-") != nil
-        num1 = tal.index("-")-1
-        num2 = tal.index("-")+1
-        tal[tal.index("-")] = sub_two(tal[num1], tal[num2])
-        tal.delete_at(num1)
-        tal.delete_at(num2-1)
-    elsif tal.index("+") != nil   
-        num1 = tal.index("+")-1    
-        num2 = tal.index("+")+1
-        tal[tal.index("+")] = add_two(tal[num1], tal[num2])
-        tal.delete_at(num1)
-        tal.delete_at(num2-1)
+
+# while tal.length > 1
+#     if tal.index("*") != nil
+#         num1 = tal.index("*")-1
+#         num2 = tal.index("*")+1
+#         tal[tal.index("*")] = mult_two(tal[num1], tal[num2])
+#         tal.delete_at(num1)
+#         tal.delete_at(num2-1)
+#     elsif tal.index("/") != nil
+#         num1 = tal.index("/")-1
+#         num2 = tal.index("/")+1
+#         tal[tal.index("/")] = div_two(tal[num1], tal[num2])
+#         tal.delete_at(num1)
+#         tal.delete_at(num2-1)
+#     elsif tal.index("-") != nil
+#         num1 = tal.index("-")-1
+#         num2 = tal.index("-")+1
+#         tal[tal.index("-")] = sub_two(tal[num1], tal[num2])
+#         tal.delete_at(num1)
+#         tal.delete_at(num2-1)
+#     elsif tal.index("+") != nil   
+#         num1 = tal.index("+")-1    
+#         num2 = tal.index("+")+1
+#         tal[tal.index("+")] = add_two(tal[num1], tal[num2])
+#         tal.delete_at(num1)
+#         tal.delete_at(num2-1)
+#     end
+#     p tal
+# end
+
+# puts "svar #{tal}"
+
+def calculat(tal)
+    num1 = nil
+    num2 = nil
+    laste_was_number = false
+
+    while tal.length > 1
+        if tal.index("*") != nil
+            num1 = tal.index("*")-1
+            num2 = tal.index("*")+1
+            tal[tal.index("*")] = mult_two(tal[num1], tal[num2])
+            tal.delete_at(num1)
+            tal.delete_at(num2-1)
+        elsif tal.index("/") != nil
+            num1 = tal.index("/")-1
+            num2 = tal.index("/")+1
+            tal[tal.index("/")] = div_two(tal[num1], tal[num2])
+            tal.delete_at(num1)
+            tal.delete_at(num2-1)
+        elsif tal.index("-") != nil
+            num1 = tal.index("-")-1
+            num2 = tal.index("-")+1
+            tal[tal.index("-")] = sub_two(tal[num1], tal[num2])
+            tal.delete_at(num1)
+            tal.delete_at(num2-1)
+        elsif tal.index("+") != nil   
+            num1 = tal.index("+")-1    
+            num2 = tal.index("+")+1
+            tal[tal.index("+")] = add_two(tal[num1], tal[num2])
+            tal.delete_at(num1)
+            tal.delete_at(num2-1)
+        end
+        p tal
     end
-    p tal
+    return tal
 end
-
-puts "svar #{tal}"
